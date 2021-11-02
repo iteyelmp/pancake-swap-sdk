@@ -20,7 +20,7 @@ var IPancakePair = _interopDefault(require('@pancakeswap-libs/pancake-swap-core/
 var _SOLIDITY_TYPE_MAXIMA;
 
 (function (ChainId) {
-  ChainId[ChainId["MAINNET"] = 100001] = "MAINNET";
+  ChainId[ChainId["MAINNET"] = 110001] = "MAINNET";
   ChainId[ChainId["TESTNET"] = 110001] = "TESTNET";
 })(exports.ChainId || (exports.ChainId = {}));
 
@@ -436,7 +436,7 @@ function currencyEquals(currencyA, currencyB) {
     return currencyA === currencyB;
   }
 }
-var WETH = (_WETH = {}, _WETH[exports.ChainId.MAINNET] = /*#__PURE__*/new Token(exports.ChainId.MAINNET, '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', 18, 'WQKC', 'Wrapped QKC', 'https://www.binance.org'), _WETH[exports.ChainId.TESTNET] = /*#__PURE__*/new Token(exports.ChainId.TESTNET, '0x2707211F7988FF4C088BC03056FCD3bc3287b9e0', 18, 'WQKC', 'Wrapped QKC', 'https://www.binance.org'), _WETH);
+var WETH = (_WETH = {}, _WETH[exports.ChainId.MAINNET] = /*#__PURE__*/new Token(exports.ChainId.MAINNET, '0x2707211F7988FF4C088BC03056FCD3bc3287b9e0', 18, 'WQKC', 'Wrapped QKC', 'https://www.binance.org'), _WETH[exports.ChainId.TESTNET] = /*#__PURE__*/new Token(exports.ChainId.TESTNET, '0x2707211F7988FF4C088BC03056FCD3bc3287b9e0', 18, 'WQKC', 'Wrapped QKC', 'https://www.binance.org'), _WETH);
 
 var _toSignificantRoundin, _toFixedRounding;
 var Decimal = /*#__PURE__*/toFormat(_Decimal);
