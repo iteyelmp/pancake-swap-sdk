@@ -122,10 +122,11 @@ export class Fraction {
     invariant(Number.isInteger(significantDigits), `${significantDigits} is not an integer.`)
     invariant(significantDigits > 0, `${significantDigits} is not positive.`)
 
-    Decimal.set({ precision: significantDigits + 1, rounding: toSignificantRounding[rounding] })
-    const quotient = new Decimal(this.numerator.toString())
+    // Decimal.set({ precision: significantDigits + 1, rounding: toSignificantRounding[rounding] })
+    let quotient = new Decimal(this.numerator.toString())
       .div(this.denominator.toString())
-      .toSignificantDigits(significantDigits)
+    const digits = parseInt(quotient.toString()).toString().length
+    quotient = quotient.toSignificantDigits(significantDigits + digits, toSignificantRounding[rounding])
     return quotient.toFormat(quotient.decimalPlaces(), format)
   }
 

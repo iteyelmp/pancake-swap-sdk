@@ -517,12 +517,11 @@ var Fraction = /*#__PURE__*/function () {
     }
 
     !Number.isInteger(significantDigits) ?  invariant(false, significantDigits + " is not an integer.")  : void 0;
-    !(significantDigits > 0) ?  invariant(false, significantDigits + " is not positive.")  : void 0;
-    Decimal.set({
-      precision: significantDigits + 1,
-      rounding: toSignificantRounding[rounding]
-    });
-    var quotient = new Decimal(this.numerator.toString()).div(this.denominator.toString()).toSignificantDigits(significantDigits);
+    !(significantDigits > 0) ?  invariant(false, significantDigits + " is not positive.")  : void 0; // Decimal.set({ precision: significantDigits + 1, rounding: toSignificantRounding[rounding] })
+
+    var quotient = new Decimal(this.numerator.toString()).div(this.denominator.toString());
+    var digits = parseInt(quotient.toString()).toString().length;
+    quotient = quotient.toSignificantDigits(significantDigits + digits, toSignificantRounding[rounding]);
     return quotient.toFormat(quotient.decimalPlaces(), format);
   };
 
